@@ -9,24 +9,10 @@ fn main() {
 
 fn draw_smiley(enigo: &mut Enigo) {
     // left eye
-    sleep(Duration::from_millis(200));
-    enigo.move_mouse(510, 200, Coordinate::Abs).unwrap();
-    sleep(Duration::from_millis(200));
-    enigo.button(Button::Left, Direction::Press).unwrap();
-    sleep(Duration::from_millis(200));
-    enigo.move_mouse(510, 250, Coordinate::Abs).unwrap();
-    sleep(Duration::from_millis(200));
-    enigo.button(Button::Left, Direction::Release).unwrap();
+    draw_path(enigo, vec![(510, 200), (510, 250)]);
 
     // right eye
-    sleep(Duration::from_millis(200));
-    enigo.move_mouse(535, 200, Coordinate::Abs).unwrap();
-    sleep(Duration::from_millis(200));
-    enigo.button(Button::Left, Direction::Press).unwrap();
-    sleep(Duration::from_millis(200));
-    enigo.move_mouse(535, 250, Coordinate::Abs).unwrap();
-    sleep(Duration::from_millis(200));
-    enigo.button(Button::Left, Direction::Release).unwrap();
+    draw_path(enigo, vec![(535, 200), (535, 250)]);
 
     // slasher smile
     let coordinates = vec![
